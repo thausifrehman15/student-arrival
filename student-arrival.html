@@ -1,0 +1,3702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budapest Arrival | Bespoke Concierge for South Asian Students</title>
+<meta name="description" content="Ultra-premium arrival, housing, legal immigration, and day-one setup concierge for South Asian students transitioning to Budapest, Hungary.">
+<!-- Editorial Typography: Playfair Display, Cormorant Garamond, Plus Jakarta Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP 3 & ScrollTrigger for 60fps Parallax & Micro-interactions -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+/* ==========================================================================
+   DESIGN TOKENS & ULTRA-LUXURY EDITORIAL THEME
+   ========================================================================== */
+:root {
+  --cream-canvas: #F9F6F0;
+  --cream-subtle: #F3EFE6;
+  --cream-card: #FAF8F3;
+  --cream-deep: #EDE6D8;
+  --cream-border: rgba(110, 138, 116, 0.18);
+
+  --sage-primary: #6E8A74;
+  --sage-light: #8DA993;
+  --sage-dark: #4B6552;
+  --sage-deep: #2C3E31;
+  --sage-velvet: #19241C;
+  --sage-border: rgba(110, 138, 116, 0.28);
+  --sage-glow: rgba(110, 138, 116, 0.18);
+
+  --gold-leaf: #C5A059;
+  --gold-light: #D8B56F;
+  --gold-bright: #E8C883;
+  --gold-deep: #9E7D38;
+  --gold-foil: linear-gradient(135deg, #ECC880 0%, #C5A059 50%, #9E7D38 100%);
+  --gold-border: rgba(197, 160, 89, 0.38);
+  --gold-glow: rgba(197, 160, 89, 0.25);
+
+  --charcoal-editorial: #181E19;
+  --warm-gray: #5F665E;
+  --warm-muted: #8E968D;
+
+  --shadow-editorial: 0 20px 50px -15px rgba(44, 62, 49, 0.08);
+  --shadow-gold: 0 16px 40px -10px rgba(197, 160, 89, 0.35);
+  --shadow-lift: 0 30px 60px -12px rgba(25, 36, 28, 0.15);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Garamond, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --transition-luxury: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--cream-canvas);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-canvas);
+  color: var(--charcoal-editorial);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   EDITORIAL TEXTURE & NOISE OVERLAY
+   ========================================================================== */
+.texture-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.ambient-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9989;
+  background: radial-gradient(circle at 50% 30%, transparent 60%, rgba(44, 62, 49, 0.04) 100%);
+}
+
+::selection {
+  background: var(--gold-leaf);
+  color: #fff;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(249, 246, 240, 0.88);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(110, 138, 116, 0.15);
+  transition: var(--transition-luxury);
+}
+
+.site-header.scrolled {
+  background: rgba(249, 246, 240, 0.96);
+  border-bottom-color: var(--gold-border);
+  box-shadow: 0 10px 30px -10px rgba(44, 62, 49, 0.06);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height 0.4s ease;
+}
+
+.site-header.scrolled .header-container {
+  height: 74px;
+}
+
+.brand-crest {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.crest-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-leaf);
+  padding: 5px;
+  background: rgba(197, 160, 89, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.brand-crest:hover .crest-icon {
+  transform: rotate(45deg);
+  border-color: var(--gold-bright);
+}
+
+.brand-crest svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--sage-deep);
+  text-transform: uppercase;
+}
+
+.brand-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--gold-leaf);
+  transition: width 0.35s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold-deep);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta-btn {
+  background: var(--gold-foil) !important;
+  color: var(--sage-velvet) !important;
+  padding: 0.75rem 1.8rem;
+  border-radius: 100px;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 1.8px !important;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.3s ease !important;
+}
+
+.nav-cta-btn::after {
+  display: none !important;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.45) !important;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.mobile-toggle span {
+  width: 28px;
+  height: 2px;
+  background: var(--sage-deep);
+  transition: var(--transition-luxury);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(249, 246, 240, 0.98);
+  backdrop-filter: blur(25px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.mobile-menu-drawer.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu-drawer a {
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--sage-deep);
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-drawer a:hover {
+  color: var(--gold-leaf);
+}
+
+/* ==========================================================================
+   GAMIFIED FLOATING JOURNEY PROGRESS TRACKER
+   ========================================================================== */
+.floating-journey-tracker {
+  position: fixed;
+  left: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(249, 246, 240, 0.82);
+  border: 1px solid var(--gold-border);
+  padding: 1.4rem 1rem;
+  border-radius: 40px;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-editorial);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.journey-node {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.journey-bullet {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cream-subtle);
+  border: 1.5px solid var(--sage-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--warm-muted);
+  transition: var(--transition-luxury);
+}
+
+.journey-node.active .journey-bullet {
+  background: var(--gold-foil);
+  border-color: var(--gold-bright);
+  color: var(--sage-velvet);
+  box-shadow: 0 0 14px rgba(197, 160, 89, 0.6);
+  transform: scale(1.15);
+}
+
+.journey-node.passed .journey-bullet {
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+  color: var(--cream-canvas);
+}
+
+.journey-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  white-space: nowrap;
+  position: absolute;
+  left: 36px;
+  background: var(--sage-velvet);
+  color: var(--cream-canvas);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.journey-node:hover .journey-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1200px) {
+  .floating-journey-tracker {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION - SPLIT SCREEN & MULTI-DEPTH PARALLAX
+   ========================================================================== */
+.hero-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 2.5rem 60px;
+  overflow: hidden;
+}
+
+.hero-vector-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.scene-parallax-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.scene-parallax-layer svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.layer-skyline-sun {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 280px;
+  height: 280px;
+}
+
+.hero-split-grid {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-left-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pre-heading-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  background: rgba(110, 138, 116, 0.12);
+  border: 1px solid var(--sage-border);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 1.4rem;
+}
+
+.pre-heading-badge .star-bullet {
+  color: var(--gold-leaf);
+}
+
+.dynamic-greeting-fader {
+  font-family: var(--font-editorial);
+  font-size: 2.4rem;
+  color: var(--gold-deep);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+}
+
+#greetingTarget {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 5.8vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.06;
+  color: var(--sage-deep);
+  letter-spacing: -1.5px;
+  margin-bottom: 1.6rem;
+}
+
+.hero-main-title .italic-accent {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-leaf);
+}
+
+.hero-main-title .underline-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-main-title .underline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 4px;
+  background: var(--gold-foil);
+  border-radius: 2px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.hero-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--warm-gray);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.hero-cta-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.gold-cta-magnetic {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  padding: 1.2rem 2.6rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.gold-cta-magnetic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s ease;
+}
+
+.gold-cta-magnetic:hover::before {
+  left: 100%;
+}
+
+.gold-cta-magnetic:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(197, 160, 89, 0.45);
+}
+
+.ghost-sage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  color: var(--sage-deep);
+  padding: 1.15rem 2.2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--sage-border);
+  transition: var(--transition-luxury);
+}
+
+.ghost-sage-btn:hover {
+  background: rgba(110, 138, 116, 0.1);
+  border-color: var(--sage-primary);
+  transform: translateY(-2px);
+}
+
+.hero-micro-proof {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  border-top: 1px solid rgba(110, 138, 116, 0.2);
+  padding-top: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proof-item strong {
+  color: var(--sage-deep);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   HERO RIGHT: INTERACTIVE BUDAPEST CONCIERGE OS DASHBOARD MOCKUP
+   ========================================================================== */
+.hero-right-dashboard {
+  position: relative;
+}
+
+.concierge-os-window {
+  background: rgba(250, 248, 243, 0.92);
+  border: 1px solid var(--gold-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lift);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s ease;
+  position: relative;
+}
+
+.concierge-os-window:hover {
+  box-shadow: 0 35px 70px -10px rgba(197, 160, 89, 0.3);
+}
+
+.os-titlebar {
+  background: var(--sage-deep);
+  color: var(--cream-canvas);
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.os-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.os-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.os-dot.red { background: #e06c75; }
+.os-dot.gold { background: var(--gold-bright); }
+.os-dot.green { background: #98c379; }
+
+.os-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #98c379;
+  box-shadow: 0 0 8px #98c379;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.os-body {
+  padding: 1.8rem;
+}
+
+.os-student-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(110, 138, 116, 0.08);
+  border: 1px solid var(--sage-border);
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+}
+
+.student-meta h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+}
+
+.student-meta p {
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+}
+
+.budapest-clock-pill {
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold-deep);
+}
+
+.flight-live-card {
+  background: #fff;
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 1.1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flight-route {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.route-badge {
+  background: var(--cream-subtle);
+  border: 1px solid var(--sage-border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--sage-deep);
+}
+
+.flight-status-chip {
+  background: rgba(152, 195, 121, 0.2);
+  color: #2b6127;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-tasks-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(110, 138, 116, 0.16);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateX(4px);
+  border-color: var(--gold-leaf);
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--charcoal-editorial);
+}
+
+.task-icon {
+  font-size: 1.1rem;
+}
+
+.task-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-badge.verified {
+  background: rgba(197, 160, 89, 0.15);
+  color: var(--gold-deep);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+.task-badge.active {
+  background: rgba(110, 138, 116, 0.15);
+  color: var(--sage-dark);
+  border: 1px solid rgba(110, 138, 116, 0.35);
+}
+
+/* Floating decorative badges on dashboard */
+.floating-vip-seal {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 3px solid var(--cream-canvas);
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.5);
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+
+/* ==========================================================================
+   INFINITE TEXT TICKER (MARQUEE)
+   ========================================================================== */
+.ticker-marquee-wrap {
+  background: var(--sage-velvet);
+  color: var(--cream-canvas);
+  padding: 1.4rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+  border-top: 1px solid rgba(197, 160, 89, 0.25);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 38s linear infinite;
+}
+
+.ticker-marquee-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+  to { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.2rem;
+  padding: 0 2.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  color: rgba(249, 246, 240, 0.95);
+}
+
+.gold-star-divider {
+  color: var(--gold-bright);
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   SHARED EDITORIAL SECTION HEADER
+   ========================================================================== */
+.editorial-section {
+  position: relative;
+  padding: 9rem 2.5rem;
+}
+
+.editorial-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  width: 45px;
+  height: 1px;
+  background: var(--gold-leaf);
+  opacity: 0.5;
+}
+
+.section-heading-editorial {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  color: var(--sage-deep);
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+}
+
+.section-heading-editorial .italic-word {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-leaf);
+}
+
+.section-description-editorial {
+  font-size: 1.15rem;
+  color: var(--warm-gray);
+  max-width: 680px;
+  margin: 0 auto 5rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   4-STEP ONBOARDING TIMELINE (HORIZONTAL SVG PATH)
+   ========================================================================== */
+.onboarding-timeline-section {
+  background: linear-gradient(180deg, var(--cream-canvas) 0%, var(--cream-subtle) 100%);
+  overflow: hidden;
+}
+
+.timeline-track-wrap {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.timeline-svg-connector {
+  position: absolute;
+  top: 45px;
+  left: 5%;
+  width: 90%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timeline-svg-connector path {
+  fill: none;
+  stroke: var(--gold-border);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 6;
+}
+
+.timeline-svg-connector #liquidPath {
+  stroke: var(--gold-leaf);
+  stroke-width: 3.5;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.timeline-nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.onboard-step-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 20px;
+  padding: 2.6rem 1.8rem;
+  text-align: center;
+  transition: var(--transition-luxury);
+  position: relative;
+}
+
+.onboard-step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-leaf);
+  box-shadow: var(--shadow-editorial);
+  background: #fff;
+}
+
+.step-milestone-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 1.8rem;
+  background: var(--cream-canvas);
+  border: 2px solid var(--gold-leaf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--sage-deep);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.2);
+  transition: var(--transition-luxury);
+}
+
+.onboard-step-card:hover .step-milestone-circle {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.4);
+}
+
+.onboard-step-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.8rem;
+}
+
+.onboard-step-card p {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   CORE SERVICES - ASYMMETRIC BENTO GRID
+   ========================================================================== */
+.services-bento-section {
+  background: var(--cream-canvas);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.bento-card {
+  background: var(--cream-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 24px;
+  padding: 3.2rem 2.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-luxury);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-leaf);
+  box-shadow: 0 25px 60px -15px rgba(197, 160, 89, 0.25);
+  background: #ffffff;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gold-foil);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.bento-card:hover::before {
+  transform: scaleX(1);
+}
+
+.bento-span-7 { grid-column: span 7; }
+.bento-span-5 { grid-column: span 5; }
+.bento-span-6 { grid-column: span 6; }
+
+.bento-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.bento-icon-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: rgba(110, 138, 116, 0.12);
+  border: 1px solid var(--sage-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  transition: var(--transition-luxury);
+}
+
+.bento-card:hover .bento-icon-box {
+  background: var(--gold-foil);
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.35);
+}
+
+.bento-badge-num {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold-leaf);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.bento-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+  margin-bottom: 1rem;
+}
+
+.bento-card p {
+  font-size: 1.02rem;
+  color: var(--warm-gray);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.bento-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--sage-deep);
+  font-weight: 500;
+}
+
+.bento-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bento-features-list li::before {
+  content: '✓';
+  color: var(--gold-leaf);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   MULTILINGUAL TRUST BADGE SECTION
+   ========================================================================== */
+.multilingual-trust-section {
+  background: var(--sage-velvet);
+  color: var(--cream-canvas);
+  position: relative;
+  overflow: hidden;
+}
+
+.multilingual-trust-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.12), transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(110, 138, 116, 0.15), transparent 50%);
+}
+
+.multilingual-trust-section .section-eyebrow {
+  color: var(--gold-light);
+}
+.multilingual-trust-section .section-heading-editorial {
+  color: var(--cream-canvas);
+}
+.multilingual-trust-section .section-description-editorial {
+  color: rgba(249, 246, 240, 0.8);
+}
+
+.languages-gold-frame {
+  max-width: 980px;
+  margin: 0 auto 5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--gold-border);
+  padding: 3.5rem 3rem;
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.languages-gold-frame h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--cream-canvas);
+  margin-bottom: 2rem;
+}
+
+.lang-grid-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(249, 246, 240, 0.07);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 0.9rem 1.8rem;
+  border-radius: 100px;
+  color: var(--cream-canvas);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: var(--transition-luxury);
+}
+
+.lang-pill:hover {
+  background: rgba(197, 160, 89, 0.2);
+  border-color: var(--gold-bright);
+  transform: translateY(-4px);
+}
+
+.trust-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.trust-stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: var(--transition-luxury);
+}
+
+.trust-stat-box:hover {
+  border-color: var(--gold-leaf);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat-counter-val {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.stat-counter-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.75);
+}
+
+/* ==========================================================================
+   PREMIUM 3-TIER PACKAGE TABLE
+   ========================================================================== */
+.pricing-tiers-section {
+  background: var(--cream-canvas);
+}
+
+.pricing-currency-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.toggle-btn {
+  background: var(--cream-card);
+  border: 1px solid var(--sage-border);
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--sage-deep);
+  transition: var(--transition-luxury);
+}
+
+.toggle-btn.active {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  border-color: var(--gold-leaf);
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-luxury);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-leaf);
+  box-shadow: var(--shadow-lift);
+}
+
+.pricing-card.featured {
+  background: #ffffff;
+  border: 2px solid var(--gold-leaf);
+  box-shadow: 0 25px 60px -10px rgba(197, 160, 89, 0.35);
+  transform: scale(1.03);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.03) translateY(-10px);
+}
+
+.tier-crest-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+}
+
+.tier-name {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+  margin-bottom: 0.6rem;
+}
+
+.tier-desc {
+  font-size: 0.92rem;
+  color: var(--warm-gray);
+  margin-bottom: 1.8rem;
+  min-height: 2.8rem;
+}
+
+.tier-price-box {
+  margin-bottom: 2.2rem;
+}
+
+.tier-price {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+  line-height: 1;
+}
+
+.tier-period {
+  font-size: 0.85rem;
+  color: var(--warm-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tier-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--charcoal-editorial);
+  margin-bottom: 2.5rem;
+}
+
+.tier-perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.tier-perks li .check {
+  color: var(--gold-leaf);
+  font-weight: 800;
+}
+
+.tier-select-btn {
+  width: 100%;
+  text-align: center;
+  padding: 1.1rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-luxury);
+}
+
+.pricing-card .tier-select-btn {
+  background: var(--cream-subtle);
+  color: var(--sage-deep);
+  border: 1px solid var(--sage-border);
+}
+
+.pricing-card.featured .tier-select-btn,
+.pricing-card:hover .tier-select-btn {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   AMELIA / LATEPOINT PRO MULTI-STEP BOOKING ENGINE (STATIC / ZERO-BACKEND)
+   ========================================================================== */
+.booking-engine-section {
+  background: linear-gradient(135deg, rgba(74, 103, 65, 0.85) 0%, rgba(25, 36, 28, 0.95) 100%), 
+              url('image_fc5f73.jpg') center/cover no-repeat fixed;
+  color: var(--cream-canvas);
+  position: relative;
+}
+
+.booking-engine-section .section-eyebrow {
+  color: var(--gold-bright);
+}
+.booking-engine-section .section-heading-editorial {
+  color: var(--cream-canvas);
+}
+.booking-engine-section .section-description-editorial {
+  color: rgba(249, 246, 240, 0.85);
+}
+
+.wizard-card-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(249, 246, 240, 0.97);
+  color: var(--charcoal-editorial);
+  border: 1px solid var(--gold-border);
+  border-radius: 28px;
+  padding: 3.5rem 3.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(25px);
+}
+
+.wizard-nav-stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3.5rem;
+}
+
+.wizard-nav-stepper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--cream-border);
+  z-index: 1;
+}
+
+.wizard-step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.step-indicator-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--cream-canvas);
+  border: 2px solid var(--sage-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--warm-muted);
+  transition: var(--transition-luxury);
+}
+
+.wizard-step-node.active .step-indicator-circle {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 16px rgba(197, 160, 89, 0.5);
+  transform: scale(1.1);
+}
+
+.wizard-step-node.completed .step-indicator-circle {
+  background: var(--sage-dark);
+  color: var(--cream-canvas);
+  border-color: var(--sage-dark);
+}
+
+.step-node-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.wizard-step-node.active .step-node-text {
+  color: var(--sage-deep);
+}
+
+.wizard-step-pane {
+  display: none;
+  animation: fadeInStep 0.4s ease forwards;
+}
+
+.wizard-step-pane.active {
+  display: block;
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wizard-step-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.5rem;
+}
+
+.wizard-step-desc {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  margin-bottom: 2rem;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-input-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+
+.form-input-group input,
+.form-input-group select {
+  padding: 1.1rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--sage-border);
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--charcoal-editorial);
+  transition: var(--transition-luxury);
+}
+
+.form-input-group input:focus,
+.form-input-group select:focus {
+  outline: none;
+  border-color: var(--gold-leaf);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.18);
+}
+
+.interactive-package-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.package-choice-card {
+  border: 2px solid var(--cream-border);
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--transition-luxury);
+  text-align: center;
+}
+
+.package-choice-card:hover {
+  border-color: var(--gold-leaf);
+}
+
+.package-choice-card.selected {
+  border-color: var(--gold-leaf);
+  background: rgba(197, 160, 89, 0.08);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.2);
+}
+
+.pkg-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+  margin-bottom: 0.4rem;
+}
+
+.pkg-rate {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold-deep);
+}
+
+.addons-selection-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.addon-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem 1.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--cream-border);
+  cursor: pointer;
+}
+
+.addon-toggle-row:hover {
+  border-color: var(--gold-leaf);
+}
+
+.addon-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.addon-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--sage-deep);
+}
+
+.addon-desc {
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+}
+
+.wizard-action-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--cream-border);
+}
+
+.wizard-btn-prev {
+  background: transparent;
+  color: var(--warm-gray);
+  border: 1px solid var(--cream-border);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.wizard-btn-next {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  border: none;
+  padding: 1.1rem 2.6rem;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.wizard-btn-next:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CONCIERGE BOARDING-PASS RECEIPT MODAL / SUCCESS STATE
+   ========================================================================== */
+.booking-success-receipt {
+  display: none;
+  background: #ffffff;
+  border: 2px solid var(--gold-leaf);
+  border-radius: 20px;
+  padding: 2.8rem;
+  text-align: center;
+  box-shadow: var(--shadow-editorial);
+  animation: fadeInStep 0.5s ease;
+}
+
+.receipt-seal {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.receipt-code-badge {
+  display: inline-block;
+  background: var(--cream-subtle);
+  border: 1px dashed var(--gold-leaf);
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+  margin-bottom: 1.2rem;
+}
+
+.whatsapp-concierge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #25D366;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  margin-top: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-concierge-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   TESTIMONIALS DRAG-RESPONSIVE CAROUSEL
+   ========================================================================== */
+.testimonials-section {
+  background: var(--cream-canvas);
+  overflow: hidden;
+}
+
+.carousel-outer-wrapper {
+  position: relative;
+}
+
+.testimonial-track-container {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.testimonial-track-container:active {
+  cursor: grabbing;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.testimonial-slide-card {
+  min-width: calc(33.333% - 1.34rem);
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  transition: var(--transition-luxury);
+  user-select: none;
+}
+
+.testimonial-slide-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-leaf);
+  box-shadow: var(--shadow-editorial);
+  background: #fff;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-editorial);
+  font-size: 4rem;
+  line-height: 0.6;
+  color: var(--gold-leaf);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.testimonial-slide-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--charcoal-editorial);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.student-avatar-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-credentials strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--sage-deep);
+}
+
+.author-credentials span {
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gold-carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.gold-nav-arrow {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-leaf);
+  background: var(--cream-card);
+  color: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition-luxury);
+}
+
+.gold-nav-arrow:hover {
+  background: var(--gold-foil);
+  color: var(--sage-velvet);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+/* ==========================================================================
+   EDITORIAL FAQ ACCORDION
+   ========================================================================== */
+.faq-section {
+  background: var(--cream-subtle);
+}
+
+.editorial-accordion-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.accordion-item {
+  background: #ffffff;
+  border: 1px solid var(--cream-border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: var(--transition-luxury);
+}
+
+.accordion-item.active {
+  border-color: var(--gold-leaf);
+  box-shadow: var(--shadow-editorial);
+}
+
+.accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.8rem 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  transition: color 0.3s ease;
+}
+
+.accordion-trigger:hover {
+  color: var(--gold-deep);
+}
+
+.accordion-cross-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.accordion-cross-icon::before,
+.accordion-cross-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--gold-leaf);
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.accordion-cross-icon::before {
+  width: 14px;
+  height: 2px;
+}
+.accordion-cross-icon::after {
+  width: 2px;
+  height: 14px;
+}
+
+.accordion-item.active .accordion-cross-icon {
+  transform: rotate(45deg);
+  background: var(--gold-foil);
+}
+
+.accordion-item.active .accordion-cross-icon::before,
+.accordion-item.active .accordion-cross-icon::after {
+  background: var(--sage-velvet);
+}
+
+.accordion-body-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+  padding: 0 2.2rem;
+}
+
+.accordion-item.active .accordion-body-collapse {
+  max-height: 500px;
+  padding: 0 2.2rem 2rem;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-body-collapse p {
+  font-size: 1.05rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   MINIMALIST DEEP SAGE FOOTER & LEGAL
+   ========================================================================== */
+.luxury-footer {
+  background: var(--sage-velvet);
+  color: var(--cream-canvas);
+  padding: 6rem 2.5rem 3rem;
+  border-top: 1px solid var(--gold-border);
+}
+
+.footer-top-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.footer-col h4 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-col ul li a {
+  color: rgba(249, 246, 240, 0.75);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--gold-bright);
+  transform: translateX(4px);
+}
+
+.footer-bottom-bar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(249, 246, 240, 0.6);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & PHONES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .bento-span-7, .bento-span-5, .bento-span-6 {
+    grid-column: span 12;
+  }
+  .timeline-nodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline-svg-connector {
+    display: none;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card.featured {
+    transform: none;
+  }
+  .pricing-card.featured:hover {
+    transform: translateY(-8px);
+  }
+  .testimonial-slide-card {
+    min-width: calc(50% - 1rem);
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .trust-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .editorial-section {
+    padding: 6rem 1.5rem;
+  }
+  .hero-wrapper {
+    padding: 120px 1.5rem 50px;
+  }
+  .hero-main-title {
+    font-size: 2.8rem;
+  }
+  .timeline-nodes-grid {
+    grid-template-columns: 1fr;
+  }
+  .interactive-package-selector {
+    grid-template-columns: 1fr;
+  }
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .wizard-card-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  .testimonial-slide-card {
+    min-width: 100%;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient Grain & Vignette Texture Overlays -->
+<div class="texture-overlay" aria-hidden="true"></div>
+<div class="ambient-vignette" aria-hidden="true"></div>
+
+<!-- Floating Gamified Journey Progress Tracker -->
+<aside class="floating-journey-tracker" id="journeyTracker" aria-label="Student Journey Progression">
+  <a href="#hero" class="journey-node active" data-step="0">
+    <div class="journey-bullet">01</div>
+    <span class="journey-label">Pre-Arrival</span>
+  </a>
+  <a href="#onboarding" class="journey-node" data-step="1">
+    <div class="journey-bullet">02</div>
+    <span class="journey-label">Blueprint &amp; Plan</span>
+  </a>
+  <a href="#services" class="journey-node" data-step="2">
+    <div class="journey-bullet">03</div>
+    <span class="journey-label">VIP Reception</span>
+  </a>
+  <a href="#pricing" class="journey-node" data-step="3">
+    <div class="journey-bullet">04</div>
+    <span class="journey-label">Concierge Tier</span>
+  </a>
+  <a href="#booking" class="journey-node" data-step="4">
+    <div class="journey-bullet">05</div>
+    <span class="journey-label">Budapest Settled</span>
+  </a>
+</aside>
+
+<!-- ==========================================================================
+     TOP NAVIGATION BAR
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <a href="#hero" class="brand-crest">
+      <div class="crest-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" stroke="#C5A059" stroke-width="2"/>
+          <path d="M50 14 L53 38 L77 41 L56 55 L63 79 L50 64 L37 79 L44 55 L23 41 L47 38 Z" fill="#C5A059" opacity="0.85"/>
+          <circle cx="50" cy="50" r="38" stroke="#4B6552" stroke-width="1" stroke-dasharray="2 4"/>
+        </svg>
+      </div>
+      <div class="brand-title">
+        <span class="brand-name">Budapest Arrival</span>
+        <span class="brand-tag">VIP Student Concierge</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#onboarding">Timeline</a>
+      <a href="#services">Services</a>
+      <a href="#trust">Languages</a>
+      <a href="#pricing">Tiers</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#faq">FAQ</a>
+      <a href="#booking" class="nav-cta-btn">Reserve Slot</a>
+    </nav>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu-drawer" id="mobileDrawer">
+  <a href="#hero" onclick="closeDrawer()">Home</a>
+  <a href="#onboarding" onclick="closeDrawer()">How It Works</a>
+  <a href="#services" onclick="closeDrawer()">Services</a>
+  <a href="#trust" onclick="closeDrawer()">Native Languages</a>
+  <a href="#pricing" onclick="closeDrawer()">Pricing Tiers</a>
+  <a href="#testimonials" onclick="closeDrawer()">Testimonials</a>
+  <a href="#faq" onclick="closeDrawer()">FAQ</a>
+  <a href="#booking" onclick="closeDrawer()" class="nav-cta-btn" style="color:#19241C !important; margin-top:1rem;">Reserve Arrival Slot</a>
+</div>
+
+<!-- ==========================================================================
+     HERO SECTION: SPLIT SCREEN & MULTI-DEPTH PARALLAX
+     ========================================================================== -->
+<section class="hero-wrapper" id="hero">
+  <!-- Multi-Depth Vector Scene (Danube River, Chain Bridge, Sun & Sky) -->
+  <div class="hero-vector-scene" id="heroVectorScene" aria-hidden="true">
+    <!-- Sun & Celestial Ring (Deepest Background) -->
+    <div class="scene-parallax-layer" data-depth="0.04">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="goldSun" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ECC880" stop-opacity="0.9"/>
+            <stop offset="60%" stop-color="#C5A059" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="1120" cy="180" r="160" fill="url(#goldSun)"/>
+        <circle cx="1120" cy="180" r="90" stroke="#C5A059" stroke-width="0.8" fill="none" stroke-dasharray="4 8" opacity="0.4"/>
+        <circle cx="1120" cy="180" r="130" stroke="#C5A059" stroke-width="0.5" fill="none" stroke-dasharray="2 6" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Soft Drifting Clouds & Birds -->
+    <div class="scene-parallax-layer" data-depth="0.10">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.45" fill="#ffffff">
+          <ellipse cx="280" cy="130" rx="120" ry="24"/>
+          <ellipse cx="340" cy="115" rx="75" ry="20"/>
+          <ellipse cx="880" cy="90" rx="110" ry="22"/>
+          <ellipse cx="940" cy="80" rx="65" ry="16"/>
+        </g>
+        <g stroke="#4B6552" stroke-width="1.6" fill="none" opacity="0.3" stroke-linecap="round">
+          <path d="M360 180 q8 -6 16 0 q8 -6 16 0"/>
+          <path d="M410 205 q6 -5 12 0 q6 -5 12 0"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Hungarian Parliament Skyline Silhouette -->
+    <div class="scene-parallax-layer" data-depth="0.22">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#4B6552" opacity="0.28">
+          <rect x="520" y="380" width="400" height="40"/>
+          <rect x="690" y="270" width="60" height="150"/>
+          <polygon points="690,270 720,200 750,270"/>
+          <rect x="650" y="300" width="30" height="120"/>
+          <polygon points="650,300 665,250 680,300"/>
+          <rect x="760" y="300" width="30" height="120"/>
+          <polygon points="760,300 775,250 790,300"/>
+          <rect x="610" y="330" width="30" height="90"/>
+          <polygon points="610,330 625,290 640,330"/>
+          <rect x="800" y="330" width="30" height="90"/>
+          <polygon points="800,330 815,290 830,330"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Danube River Water Flow Layer -->
+    <div class="scene-parallax-layer" data-depth="0.32">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="danubeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6E8A74" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#4B6552" stop-opacity="0.35"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 420 Q180 405 360 420 T720 420 T1080 420 T1440 420 L1440 600 L0 600 Z" fill="url(#danubeGrad)"/>
+        <path d="M0 450 Q200 440 400 450 T800 450 T1200 450 T1440 450" stroke="#6E8A74" stroke-width="1.2" fill="none" opacity="0.3"/>
+        <path d="M0 485 Q220 475 440 485 T880 485 T1320 485 T1440 485" stroke="#C5A059" stroke-width="1" fill="none" opacity="0.25"/>
+      </svg>
+    </div>
+
+    <!-- Széchenyi Chain Bridge Structure -->
+    <div class="scene-parallax-layer" data-depth="0.45">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#2C3E31" fill="none" stroke-linecap="round" opacity="0.75">
+          <rect x="100" y="440" width="1240" height="12" fill="#2C3E31" stroke="none" opacity="0.8"/>
+          <!-- Bridge Tower Left -->
+          <rect x="420" y="320" width="16" height="125" fill="#2C3E31" stroke="none"/>
+          <rect x="460" y="320" width="16" height="125" fill="#2C3E31" stroke="none"/>
+          <rect x="410" y="315" width="76" height="12" fill="#2C3E31" stroke="none"/>
+          <rect x="420" y="360" width="56" height="8" fill="#2C3E31" stroke="none"/>
+          <!-- Bridge Tower Right -->
+          <rect x="940" y="320" width="16" height="125" fill="#2C3E31" stroke="none"/>
+          <rect x="980" y="320" width="16" height="125" fill="#2C3E31" stroke="none"/>
+          <rect x="930" y="315" width="76" height="12" fill="#2C3E31" stroke="none"/>
+          <rect x="940" y="360" width="56" height="8" fill="#2C3E31" stroke="none"/>
+          <!-- Suspension Cables -->
+          <path d="M100 440 Q270 330 448 322" stroke-width="2.6"/>
+          <path d="M448 322 Q700 435 968 322" stroke-width="2.6"/>
+          <path d="M968 322 Q1170 330 1340 440" stroke-width="2.6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Split Screen Content Grid -->
+  <div class="hero-split-grid">
+    <!-- Left Column: Editorial Magazine Typography -->
+    <div class="hero-left-editorial">
+      <div class="pre-heading-badge">
+        <span class="star-bullet">★</span> VIP Student Concierge · Budapest, Hungary
+      </div>
+
+      <div class="dynamic-greeting-fader">
+        <span id="greetingTarget">Welcome</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        Arriving in <span class="italic-accent">Budapest</span><br>
+        <span class="underline-accent">Soon?</span>
+      </h1>
+
+      <p class="hero-lead-text">
+        The gold-standard arrival service for South Asian students. From VIP airport touchdown at Liszt Ferenc to verified housing keys, Hungarian SIM, student transit passes, and stress-free immigration paperwork.
+      </p>
+
+      <div class="hero-cta-cluster">
+        <a href="#booking" class="gold-cta-magnetic">
+          Secure Your Arrival Slot <span>→</span>
+        </a>
+        <a href="#pricing" class="ghost-sage-btn">
+          Explore Tiers
+        </a>
+      </div>
+
+      <div class="hero-micro-proof">
+        <div class="proof-item">
+          <strong>500+</strong> <span>Students Escorted</span>
+        </div>
+        <div class="proof-item">
+          <strong>100%</strong> <span>Registration Pass</span>
+        </div>
+        <div class="proof-item">
+          <strong>5</strong> <span>South Asian Languages</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive "Budapest Concierge OS" Student Dashboard Mockup -->
+    <div class="hero-right-dashboard">
+      <div class="floating-vip-seal">
+        <span>VIP</span>
+        <span>VERIFIED</span>
+      </div>
+
+      <div class="concierge-os-window" id="conciergeMockup">
+        <div class="os-titlebar">
+          <div class="os-controls">
+            <span class="os-dot red"></span>
+            <span class="os-dot gold"></span>
+            <span class="os-dot green"></span>
+          </div>
+          <div class="os-title">
+            <span class="live-pulse"></span> BUDAPEST CONCIERGE OS · LIVE MONITOR
+          </div>
+          <span style="font-size:0.7rem; color:var(--gold-bright);">CET 14:32</span>
+        </div>
+
+        <div class="os-body">
+          <div class="os-student-banner">
+            <div class="student-meta">
+              <h4>Aarav Sharma</h4>
+              <p>MSc Computer Science · BME University</p>
+            </div>
+            <div class="budapest-clock-pill">
+              <span style="display:block; font-size:0.65rem; color:var(--warm-muted);">ARRIVAL STATUS</span>
+              <strong style="color:var(--sage-dark);">CONFIRMED</strong>
+            </div>
+          </div>
+
+          <div class="flight-live-card">
+            <div class="flight-route">
+              <span class="route-badge">EK 111</span>
+              <div>
+                <strong style="font-size:0.85rem; color:var(--sage-deep); display:block;">DXB → BUD</strong>
+                <span style="font-size:0.75rem; color:var(--warm-gray);">Liszt Ferenc Terminal 2B</span>
+              </div>
+            </div>
+            <span class="flight-status-chip">ON TIME · CHAUFFEUR DISPATCHED</span>
+          </div>
+
+          <div class="dashboard-tasks-feed">
+            <div class="task-item">
+              <div class="task-info">
+                <span class="task-icon">🎫</span>
+                <div>
+                  <span style="font-weight:600; display:block;">BKK Monthly Transit Pass</span>
+                  <span style="font-size:0.75rem; color:var(--warm-gray);">Issued in BudapestGO app</span>
+                </div>
+              </div>
+              <span class="task-badge active">READY</span>
+            </div>
+
+            <div class="task-item">
+              <div class="task-info">
+                <span class="task-icon">💳</span>
+                <div>
+                  <span style="font-weight:600; display:block;">OTP Bank Account Opening</span>
+                  <span style="font-size:0.75rem; color:var(--warm-gray);">Appointment at Deák Ferenc tér</span>
+                </div>
+              </div>
+              <span class="task-badge verified">BOOKED</span>
+            </div>
+
+            <div class="task-item">
+              <div class="task-info">
+                <span class="task-icon">🔑</span>
+                <div>
+                  <span style="font-weight:600; display:block;">Verified 7th District Flat</span>
+                  <span style="font-size:0.75rem; color:var(--warm-gray);">Landlord vetted &amp; keys escrowed</span>
+                </div>
+              </div>
+              <span class="task-badge verified">SECURED</span>
+            </div>
+
+            <div class="task-item">
+              <div class="task-info">
+                <span class="task-icon">🏛️</span>
+                <div>
+                  <span style="font-weight:600; display:block;">Residence Permit (BÁH)</span>
+                  <span style="font-size:0.75rem; color:var(--warm-gray);">Escort slot &amp; dossier prepared</span>
+                </div>
+              </div>
+              <span class="task-badge active">SCHEDULED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INFINITE TEXT MARQUEE
+     ========================================================================== -->
+<div class="ticker-marquee-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> 24/7 Premium Airport Concierge</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> Safe &amp; Verified Housing Placement</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> Five South Asian Languages Supported</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> 100% Stress-Free Legal Paperwork</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> 24/7 Premium Airport Concierge</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> Safe &amp; Verified Housing Placement</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> Five South Asian Languages Supported</span>
+    <span class="ticker-item"><span class="gold-star-divider">✦</span> 100% Stress-Free Legal Paperwork</span>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     THE 4-STEP ONBOARDING TIMELINE
+     ========================================================================== -->
+<section class="editorial-section onboarding-timeline-section" id="onboarding">
+  <div class="editorial-container">
+    <div class="section-eyebrow">The Seamless Journey</div>
+    <h2 class="section-heading-editorial">Four Steps to <span class="italic-word">Total Integration</span></h2>
+    <p class="section-description-editorial">
+      A transparent, horizontal onboarding blueprint engineered so you never experience bureaucratic friction, foreign transport panic, or housing uncertainty.
+    </p>
+
+    <div class="timeline-track-wrap">
+      <!-- Animated SVG Liquid Gold Artery Connector -->
+      <svg class="timeline-svg-connector" viewBox="0 0 1000 60" preserveAspectRatio="none">
+        <path d="M 50 30 L 950 30" />
+        <path id="liquidPath" d="M 50 30 L 950 30" />
+      </svg>
+
+      <div class="timeline-nodes-grid">
+        <div class="onboard-step-card">
+          <div class="step-milestone-circle">01</div>
+          <h4>Elite Booking</h4>
+          <p>Complete our luxury intake wizard. We synchronize with your flight schedule, terminal arrival, and customized university requirements.</p>
+        </div>
+
+        <div class="onboard-step-card">
+          <div class="step-milestone-circle">02</div>
+          <h4>Pre-Arrival Blueprint</h4>
+          <p>Receive your personalized legal checklist, vetted housing recommendations, and direct WhatsApp liaison in your native tongue before departure.</p>
+        </div>
+
+        <div class="onboard-step-card">
+          <div class="step-milestone-circle">03</div>
+          <h4>VIP Airport Reception</h4>
+          <p>Step through arrivals at Liszt Ferenc to meet your dedicated concierge holding your nameplate, with private door-to-door transfer ready.</p>
+        </div>
+
+        <div class="onboard-step-card">
+          <div class="step-milestone-circle">04</div>
+          <h4>Local Integration</h4>
+          <p>Within 72 hours: active Hungarian SIM card, OTP bank account, BKK monthly student transit pass, and accompanied residence permit filing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CORE SERVICES - ASYMMETRICAL BENTO GRID
+     ========================================================================== */
+<section class="editorial-section services-bento-section" id="services">
+  <div class="editorial-container">
+    <div class="section-eyebrow">Tailored Mastery</div>
+    <h2 class="section-heading-editorial">Core Concierge <span class="italic-word">Services</span></h2>
+    <p class="section-description-editorial">
+      Precision-engineered relocation services that replace the chaotic guessing game of moving to Hungary with pure peace of mind.
+    </p>
+
+    <div class="bento-grid">
+      <!-- Bento Item 1: Airport Pickup (Large Feature span 7) -->
+      <div class="bento-card bento-span-7">
+        <div class="bento-header">
+          <div class="bento-icon-box">✈️</div>
+          <span class="bento-badge-num">01</span>
+        </div>
+        <div>
+          <h3>Airport Pickup Concierge</h3>
+          <p>
+            Liszt Ferenc Airport VIP meet-and-greet direct from customs to your apartment doorstep. Real-time flight tracking ensures we are standing by even if your connection is delayed.
+          </p>
+          <ul class="bento-features-list">
+            <li>Private climate-controlled Mercedes V-Class transfer</li>
+            <li>Luggage handling &amp; direct escort to your flat door</li>
+            <li>Emergency welcome call home to your family on arrival</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bento Item 2: Verified Housing (Span 5) -->
+      <div class="bento-card bento-span-5">
+        <div class="bento-header">
+          <div class="bento-icon-box">🏠</div>
+          <span class="bento-badge-num">02</span>
+        </div>
+        <div>
+          <h3>Verified Housing Placement</h3>
+          <p>
+            Physical in-person video inspections, Hungarian tenancy contract vetting, scam eradication, and deposit escrow advisory.
+          </p>
+          <ul class="bento-features-list">
+            <li>Zero landlord scams or phantom listings</li>
+            <li>Bilingual lease agreement review</li>
+            <li>Proximity to university campus &amp; metro line</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bento Item 3: Legal & Bureaucracy (Span 5) -->
+      <div class="bento-card bento-span-5">
+        <div class="bento-header">
+          <div class="bento-icon-box">🏛️</div>
+          <span class="bento-badge-num">03</span>
+        </div>
+        <div>
+          <h3>Legal &amp; Bureaucracy Navigation</h3>
+          <p>
+            Accompanied in-person representation at the National Directorate-General for Aliens Policing (OIF/BÁH).
+          </p>
+          <ul class="bento-features-list">
+            <li>Residence Permit (Tartózkodási Engedély) escort</li>
+            <li>Address Card (Lakcímkártya) official registration</li>
+            <li>Tax Identification Number (Adóazonosító)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bento Item 4: Day-One Essentials (Span 7) -->
+      <div class="bento-card bento-span-7">
+        <div class="bento-header">
+          <div class="bento-icon-box">📱</div>
+          <span class="bento-badge-num">04</span>
+        </div>
+        <div>
+          <h3>Day-One Essentials Setup</h3>
+          <p>
+            Land with complete peace of mind. We have your high-speed Hungarian SIM card active, your bank appointment booked, and your student transit card verified.
+          </p>
+          <ul class="bento-features-list">
+            <li>Immediate Yettel / Vodafone 5G SIM with unlimited data</li>
+            <li>Fast-track OTP / Erste Bank student account opening</li>
+            <li>BKK monthly student transit pass issued in BudapestGO</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MULTILINGUAL TRUST BADGE SECTION
+     ========================================================================== -->
+<section class="editorial-section multilingual-trust-section" id="trust">
+  <div class="editorial-container">
+    <div class="section-eyebrow">Zero Cultural Barrier</div>
+    <h2 class="section-heading-editorial">Bridging the Gap in <span class="italic-word">Your Language</span></h2>
+    <p class="section-description-editorial">
+      Navigating complex Hungarian laws, lease contracts, and public transport shouldn't feel alienating. Our concierge officers speak your native language fluently.
+    </p>
+
+    <div class="languages-gold-frame">
+      <h3>Native South Asian Language Support</h3>
+      <div class="lang-grid-pills">
+        <div class="lang-pill"><span style="font-size:1.3rem;">🇬🇧</span> English</div>
+        <div class="lang-pill"><span style="font-size:1.3rem;">🇮🇳</span> हिन्दी (Hindi)</div>
+        <div class="lang-pill"><span style="font-size:1.3rem;">🇮🇳</span> తెలుగు (Telugu)</div>
+        <div class="lang-pill"><span style="font-size:1.3rem;">🇮🇳</span> தமிழ் (Tamil)</div>
+        <div class="lang-pill"><span style="font-size:1.3rem;">🇵🇰</span> اردو (Urdu)</div>
+      </div>
+      <p style="color:rgba(249,246,240,0.85); font-size:1.05rem; max-width:620px; margin:0 auto;">
+        From contract translation to bank interviews, you will always have someone beside you who speaks your mother tongue.
+      </p>
+    </div>
+
+    <div class="trust-stats-row">
+      <div class="trust-stat-box">
+        <div class="stat-counter-val" data-count="500" data-suffix="+">500+</div>
+        <div class="stat-counter-tag">Students Settled</div>
+      </div>
+      <div class="trust-stat-box">
+        <div class="stat-counter-val" data-count="100" data-suffix="%">100%</div>
+        <div class="stat-counter-tag">Residence Permit Success</div>
+      </div>
+      <div class="trust-stat-box">
+        <div class="stat-counter-val" data-count="5" data-suffix="">5</div>
+        <div class="stat-counter-tag">Languages Spoken</div>
+      </div>
+      <div class="trust-stat-box">
+        <div class="stat-counter-val" data-count="24" data-suffix="/7">24/7</div>
+        <div class="stat-counter-tag">On-Call Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PREMIUM 3-TIER PACKAGE TABLE
+     ========================================================================== -->
+<section class="editorial-section pricing-tiers-section" id="pricing">
+  <div class="editorial-container">
+    <div class="section-eyebrow">Transparent Investment</div>
+    <h2 class="section-heading-editorial">Concierge <span class="italic-word">Tiers</span></h2>
+    <p class="section-description-editorial">
+      Curated packages tailored for international scholars, Erasmus attendees, and full-degree students. Upfront, transparent, zero hidden fees.
+    </p>
+
+    <!-- Currency Toggle -->
+    <div class="pricing-currency-toggle">
+      <button class="toggle-btn active" id="btnEUR" onclick="switchCurrency('EUR')">EUR (€)</button>
+      <button class="toggle-btn" id="btnHUF" onclick="switchCurrency('HUF')">HUF (Ft)</button>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Tier 1: Budapest Essential -->
+      <div class="pricing-card">
+        <div>
+          <h3 class="tier-name">Budapest Essential</h3>
+          <p class="tier-desc">Seamless airport arrival and day-one connectivity for the independent student.</p>
+          <div class="tier-price-box">
+            <span class="tier-price" data-eur="€180" data-huf="70,000 Ft">€180</span>
+            <span class="tier-period">/ one-time</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="check">✓</span> Liszt Ferenc VIP Airport Meet &amp; Greet</li>
+            <li><span class="check">✓</span> Private Chauffeur to Your Accommodation</li>
+            <li><span class="check">✓</span> High-Speed Hungarian 5G SIM Card (50GB)</li>
+            <li><span class="check">✓</span> BKK Monthly Student Transit Pass Setup</li>
+            <li><span class="check">✓</span> Direct WhatsApp Emergency Helpline (7 Days)</li>
+          </ul>
+        </div>
+        <button class="tier-select-btn" onclick="selectPackageFromPricing('essential')">Select Essential</button>
+      </div>
+
+      <!-- Tier 2: The Academic Elite (Featured) -->
+      <div class="pricing-card featured">
+        <div class="tier-crest-badge">★ Most Requested by Scholars</div>
+        <div>
+          <h3 class="tier-name">The Academic Elite</h3>
+          <p class="tier-desc">Complete arrival, day-one essentials, plus full legal immigration representation.</p>
+          <div class="tier-price-box">
+            <span class="tier-price" data-eur="€390" data-huf="150,000 Ft">€390</span>
+            <span class="tier-period">/ one-time</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="check">✓</span> <strong>Everything in Budapest Essential</strong></li>
+            <li><span class="check">✓</span> In-Person Immigration Office (BÁH) Escort</li>
+            <li><span class="check">✓</span> Residence Permit &amp; Address Card Filing</li>
+            <li><span class="check">✓</span> Bank Account Opening (OTP / Erste) Escort</li>
+            <li><span class="check">✓</span> Hungarian Tax Number (Adóazonosító) Setup</li>
+            <li><span class="check">✓</span> 14 Days Dedicated Concierge WhatsApp Desk</li>
+          </ul>
+        </div>
+        <button class="tier-select-btn" onclick="selectPackageFromPricing('elite')">Select Academic Elite</button>
+      </div>
+
+      <!-- Tier 3: The Royal Transition -->
+      <div class="pricing-card">
+        <div>
+          <h3 class="tier-name">The Royal Transition</h3>
+          <p class="tier-desc">The ultimate white-glove experience. Dedicated housing placement + 30 days VIP support.</p>
+          <div class="tier-price-box">
+            <span class="tier-price" data-eur="€750" data-huf="290,000 Ft">€750</span>
+            <span class="tier-period">/ one-time</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="check">✓</span> <strong>Everything in Academic Elite</strong></li>
+            <li><span class="check">✓</span> 1-on-1 Physical Flat Inspections with Video</li>
+            <li><span class="check">✓</span> Lease Contract Legal Vetting &amp; Deposit Escrow</li>
+            <li><span class="check">✓</span> Room Move-In Essentials &amp; Linen Hamper</li>
+            <li><span class="check">✓</span> 30 Days 24/7 Dedicated On-Call Personal Liaison</li>
+          </ul>
+        </div>
+        <button class="tier-select-btn" onclick="selectPackageFromPricing('royal')">Select Royal Transition</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MULTI-STEP CONCIERGE BOOKING ENGINE (AMELIA / LATEPOINT PRO STYLE)
+     ========================================================================== -->
+<section class="editorial-section booking-engine-section" id="booking">
+  <div class="editorial-container">
+    <div class="section-eyebrow">White-Glove Reservation</div>
+    <h2 class="section-heading-editorial">Secure Your <span class="italic-word">Arrival Slot</span></h2>
+    <p class="section-description-editorial">
+      Complete our 4-step concierge wizard. Slots are reserved 3 weeks in advance to ensure dedicated vehicle dispatch and legal escorts.
+    </p>
+
+    <div class="wizard-card-wrapper">
+      <!-- Stepper Nav Bar -->
+      <div class="wizard-nav-stepper">
+        <div class="wizard-step-node active" data-step-nav="1" onclick="jumpToStep(1)">
+          <div class="step-indicator-circle">1</div>
+          <span class="step-node-text">Tier</span>
+        </div>
+        <div class="wizard-step-node" data-step-nav="2" onclick="jumpToStep(2)">
+          <div class="step-indicator-circle">2</div>
+          <span class="step-node-text">Flight</span>
+        </div>
+        <div class="wizard-step-node" data-step-nav="3" onclick="jumpToStep(3)">
+          <div class="step-indicator-circle">3</div>
+          <span class="step-node-text">Student</span>
+        </div>
+        <div class="wizard-step-node" data-step-nav="4" onclick="jumpToStep(4)">
+          <div class="step-indicator-circle">4</div>
+          <span class="step-node-text">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Booking Form / Wizard Body -->
+      <form id="arrivalBookingForm" onsubmit="handleBookingSubmit(event)">
+        
+        <!-- STEP 1: PACKAGE SELECTION -->
+        <div class="wizard-step-pane active" id="wizardStep1">
+          <h3 class="wizard-step-title">01. Select Your Concierge Tier</h3>
+          <p class="wizard-step-desc">Choose the level of arrival support that best fits your requirements.</p>
+
+          <div class="interactive-package-selector">
+            <div class="package-choice-card selected" onclick="choosePackage('essential', 180, this)">
+              <div class="pkg-title">Budapest Essential</div>
+              <div class="pkg-rate">€180</div>
+              <p style="font-size:0.75rem; color:var(--warm-gray); margin-top:0.4rem;">Airport Pickup &amp; Day-One SIM/Pass</p>
+            </div>
+            <div class="package-choice-card" onclick="choosePackage('elite', 390, this)">
+              <div class="pkg-title">Academic Elite</div>
+              <div class="pkg-rate">€390</div>
+              <p style="font-size:0.75rem; color:var(--warm-gray); margin-top:0.4rem;">Pickup + Legal/Immigration Support</p>
+            </div>
+            <div class="package-choice-card" onclick="choosePackage('royal', 750, this)">
+              <div class="pkg-title">Royal Transition</div>
+              <div class="pkg-rate">€750</div>
+              <p style="font-size:0.75rem; color:var(--warm-gray); margin-top:0.4rem;">All-Inclusive + Verified Housing</p>
+            </div>
+          </div>
+
+          <input type="hidden" id="selectedPackageInput" name="package" value="essential">
+          <input type="hidden" id="basePackagePrice" value="180">
+
+          <div class="wizard-action-footer">
+            <span></span>
+            <button type="button" class="wizard-btn-next" onclick="nextStep(1)">Proceed to Flight Details →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: FLIGHT & ARRIVAL COORDINATES -->
+        <div class="wizard-step-pane" id="wizardStep2">
+          <h3 class="wizard-step-title">02. Flight &amp; Arrival Coordinates</h3>
+          <p class="wizard-step-desc">Provide your travel schedule so our chauffeur and concierge team can track your flight in real time.</p>
+
+          <div class="form-grid-2">
+            <div class="form-input-group">
+              <label for="arrivalDate">Arrival Date *</label>
+              <input type="date" id="arrivalDate" name="arrival_date" required>
+            </div>
+            <div class="form-input-group">
+              <label for="arrivalTime">Estimated Landing Time (CET) *</label>
+              <input type="time" id="arrivalTime" name="arrival_time" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-input-group">
+              <label for="flightNumber">Airline &amp; Flight Number (e.g. EK 111, QR 201) *</label>
+              <input type="text" id="flightNumber" name="flight_number" placeholder="e.g. Emirates EK 111" required>
+            </div>
+            <div class="form-input-group">
+              <label for="terminalSelect">Liszt Ferenc Terminal *</label>
+              <select id="terminalSelect" name="terminal" required>
+                <option value="T2B">Terminal 2B (Non-Schengen - India/UAE/Qatar/Turkey)</option>
+                <option value="T2A">Terminal 2A (Schengen Connections)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-input-group">
+            <label for="universitySelect">Hungarian University *</label>
+            <select id="universitySelect" name="university" required>
+              <option value="" disabled selected>Select Your Institution</option>
+              <option value="BME">BME - Budapest University of Technology and Economics</option>
+              <option value="Corvinus">Corvinus University of Budapest</option>
+              <option value="ELTE">Eötvös Loránd University (ELTE)</option>
+              <option value="Semmelweis">Semmelweis University of Medicine</option>
+              <option value="IBS">IBS International Business School</option>
+              <option value="Metropolitan">Budapest Metropolitan University</option>
+              <option value="Obuda">Óbuda University</option>
+              <option value="Other">Other University</option>
+            </select>
+          </div>
+
+          <div class="wizard-action-footer">
+            <button type="button" class="wizard-btn-prev" onclick="prevStep(2)">← Back</button>
+            <button type="button" class="wizard-btn-next" onclick="nextStep(2)">Proceed to Student Details →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: STUDENT & LANGUAGE PREFERENCE -->
+        <div class="wizard-step-pane" id="wizardStep3">
+          <h3 class="wizard-step-title">03. Student Information</h3>
+          <p class="wizard-step-desc">Enter your passport credentials and preferred mother tongue for communications.</p>
+
+          <div class="form-grid-2">
+            <div class="form-input-group">
+              <label for="studentName">Full Legal Name (as in Passport) *</label>
+              <input type="text" id="studentName" name="full_name" placeholder="e.g. Aarav Sharma" required>
+            </div>
+            <div class="form-input-group">
+              <label for="studentEmail">Primary Email Address *</label>
+              <input type="email" id="studentEmail" name="email" placeholder="student@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-input-group">
+              <label for="studentPhone">WhatsApp Phone Number (with Country Code) *</label>
+              <input type="tel" id="studentPhone" name="phone" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-input-group">
+              <label for="preferredLanguage">Preferred Native Language *</label>
+              <select id="preferredLanguage" name="preferred_language" required>
+                <option value="English">English</option>
+                <option value="Hindi">हिन्दी (Hindi)</option>
+                <option value="Telugu">తెలుగు (Telugu)</option>
+                <option value="Tamil">தமிழ் (Tamil)</option>
+                <option value="Urdu">اردو (Urdu)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-input-group">
+            <label for="homeCity">City &amp; Country of Origin</label>
+            <input type="text" id="homeCity" name="origin_city" placeholder="e.g. Hyderabad, India">
+          </div>
+
+          <div class="wizard-action-footer">
+            <button type="button" class="wizard-btn-prev" onclick="prevStep(3)">← Back</button>
+            <button type="button" class="wizard-btn-next" onclick="nextStep(3)">Review &amp; Add-ons →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: CONCIERGE ADD-ONS & CONFIRMATION -->
+        <div class="wizard-step-pane" id="wizardStep4">
+          <h3 class="wizard-step-title">04. Concierge Add-ons &amp; Confirmation</h3>
+          <p class="wizard-step-desc">Tailor your arrival with optional bespoke concierge add-ons.</p>
+
+          <div class="addons-selection-grid">
+            <label class="addon-toggle-row">
+              <div class="addon-details">
+                <input type="checkbox" id="addonLuggage" value="25" onchange="calculateTotal()" style="width:20px; height:20px; accent-color:var(--gold-leaf);">
+                <div>
+                  <span class="addon-name">Extra Heavy Luggage Handling</span>
+                  <span class="addon-desc" style="display:block;">Dedicated van space &amp; lifting assistance for 3+ large bags</span>
+                </div>
+              </div>
+              <strong style="color:var(--gold-deep);">+€25</strong>
+            </label>
+
+            <label class="addon-toggle-row">
+              <div class="addon-details">
+                <input type="checkbox" id="addonHamper" value="20" onchange="calculateTotal()" style="width:20px; height:20px; accent-color:var(--gold-leaf);">
+                <div>
+                  <span class="addon-name">Welcome Arrival Grocery Kit</span>
+                  <span class="addon-desc" style="display:block;">Mineral water, snacks, fresh milk, South Asian spices &amp; breakfast</span>
+                </div>
+              </div>
+              <strong style="color:var(--gold-deep);">+€20</strong>
+            </label>
+
+            <label class="addon-toggle-row">
+              <div class="addon-details">
+                <input type="checkbox" id="addonLinen" value="35" onchange="calculateTotal()" style="width:20px; height:20px; accent-color:var(--gold-leaf);">
+                <div>
+                  <span class="addon-name">Dormitory Fresh Linen &amp; Pillow Set</span>
+                  <span class="addon-desc" style="display:block;">Fresh duvet, pillow, bedsheet, and bath towel ready upon arrival</span>
+                </div>
+              </div>
+              <strong style="color:var(--gold-deep);">+€35</strong>
+            </label>
+          </div>
+
+          <!-- Live Price Summary Box -->
+          <div style="background:var(--cream-subtle); border:1px solid var(--gold-border); border-radius:16px; padding:1.4rem; margin-bottom:1.8rem; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span style="font-size:0.75rem; color:var(--warm-gray); text-transform:uppercase; letter-spacing:1px; display:block;">ESTIMATED TOTAL INVESTMENT</span>
+              <strong id="summaryTierName" style="color:var(--sage-deep); font-size:1.1rem;">Budapest Essential</strong>
+            </div>
+            <div style="text-align:right;">
+              <span id="finalPriceDisplay" style="font-family:var(--font-serif); font-size:2.4rem; font-weight:700; color:var(--gold-deep);">€180</span>
+            </div>
+          </div>
+
+          <div class="wizard-action-footer">
+            <button type="button" class="wizard-btn-prev" onclick="prevStep(4)">← Back</button>
+            <button type="submit" id="submitBookingBtn" class="wizard-btn-next" style="background:var(--gold-foil); font-size:0.92rem;">
+              Confirm Arrival Slot Reservation ★
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Instant Luxury Boarding-Pass Confirmation Receipt (Success State) -->
+      <div class="booking-success-receipt" id="bookingReceipt">
+        <div class="receipt-seal">✓</div>
+        <h3 style="font-family:var(--font-serif); font-size:2.2rem; color:var(--sage-deep); margin-bottom:0.5rem;">Arrival Slot Reserved</h3>
+        <p style="color:var(--warm-gray); max-width:550px; margin:0 auto 1.5rem;">
+          Your flight coordinates and concierge request have been logged into our Budapest Arrival Dispatch.
+        </p>
+
+        <div class="receipt-code-badge" id="receiptCode">REF: BUD-2024-8821</div>
+
+        <div style="background:var(--cream-subtle); border-radius:14px; padding:1.5rem; max-width:520px; margin:0 auto 1.5rem; text-align:left; font-size:0.92rem; border:1px solid var(--cream-border);">
+          <div style="margin-bottom:0.5rem;"><strong>Student:</strong> <span id="recStudentName">-</span></div>
+          <div style="margin-bottom:0.5rem;"><strong>Flight:</strong> <span id="recFlight">-</span></div>
+          <div style="margin-bottom:0.5rem;"><strong>Arrival Date:</strong> <span id="recDate">-</span></div>
+          <div style="margin-bottom:0.5rem;"><strong>Package:</strong> <span id="recPackage">-</span></div>
+          <div><strong>Total:</strong> <span id="recTotal" style="color:var(--gold-deep); font-weight:700;">-</span></div>
+        </div>
+
+        <p style="font-size:0.85rem; color:var(--warm-gray);">
+          To guarantee instant chauffeur dispatch, verify your flight directly with your concierge on WhatsApp:
+        </p>
+
+        <a href="#" id="whatsAppDirectBtn" class="whatsapp-concierge-btn" target="_blank" rel="noopener">
+          <span>💬</span> Verify on WhatsApp with Arrival Concierge
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     TESTIMONIALS DRAG-RESPONSIVE CAROUSEL
+     ========================================================================== -->
+<section class="editorial-section testimonials-section" id="testimonials">
+  <div class="editorial-container">
+    <div class="section-eyebrow">Real Experiences</div>
+    <h2 class="section-heading-editorial">Stories from <span class="italic-word">Our Scholars</span></h2>
+    <p class="section-description-editorial">
+      Hear how South Asian students made their arrival in Budapest completely seamless, secure, and stress-free.
+    </p>
+
+    <div class="carousel-outer-wrapper">
+      <div class="testimonial-track-container" id="testimonialTrack">
+        <div class="testimonial-slider" id="testimonialSlider">
+          
+          <!-- Card 1 -->
+          <div class="testimonial-slide-card">
+            <div class="testimonial-quote-mark">“</div>
+            <p>
+              I touched down at Liszt Ferenc at 11:30 PM with 3 heavy suitcases. My driver was waiting right outside baggage claim with my nameplate. They got me safely to my 7th district flat without any stress.
+            </p>
+            <div class="testimonial-author-block">
+              <div class="student-avatar-circle">A</div>
+              <div class="author-credentials">
+                <strong>Aditya Roy</strong>
+                <span>MSc Computer Science · BME (Delhi)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-slide-card">
+            <div class="testimonial-quote-mark">“</div>
+            <p>
+              The Hungarian residence permit paperwork seemed like a nightmare. My concierge walked me right into the immigration office, reviewed my address card forms, and everything was approved in 1 visit.
+            </p>
+            <div class="testimonial-author-block">
+              <div class="student-avatar-circle">S</div>
+              <div class="author-credentials">
+                <strong>Sana Khan</strong>
+                <span>BSc Biotechnology · ELTE (Lahore)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-slide-card">
+            <div class="testimonial-quote-mark">“</div>
+            <p>
+              Having someone explain the BKK metro passes and Hungarian rental deposit rules in Telugu was an absolute blessing. They saved me from a shady landlord deposit scam on day two!
+            </p>
+            <div class="testimonial-author-block">
+              <div class="student-avatar-circle">V</div>
+              <div class="author-credentials">
+                <strong>Vikram Teja</strong>
+                <span>PhD Mechanical Eng · BME (Hyderabad)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="testimonial-slide-card">
+            <div class="testimonial-quote-mark">“</div>
+            <p>
+              My Hungarian Yettel SIM card and Erste student bank account were fully operational on my second day. You cannot put a price on landing in Europe with everything already handled.
+            </p>
+            <div class="testimonial-author-block">
+              <div class="student-avatar-circle">P</div>
+              <div class="author-credentials">
+                <strong>Priya Natarajan</strong>
+                <span>MD Medicine · Semmelweis (Chennai)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Gold-Rimmed Arrow Controls -->
+      <div class="gold-carousel-nav">
+        <button class="gold-nav-arrow" id="carouselPrevBtn" aria-label="Previous Slide">←</button>
+        <button class="gold-nav-arrow" id="carouselNextBtn" aria-label="Next Slide">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     EDITORIAL FAQ ACCORDION
+     ========================================================================== -->
+<section class="editorial-section faq-section" id="faq">
+  <div class="editorial-container">
+    <div class="section-eyebrow">Clear Guidance</div>
+    <h2 class="section-heading-editorial">Frequently <span class="italic-word">Asked Questions</span></h2>
+    <p class="section-description-editorial">
+      Direct, straightforward answers to everything you need to know about your arrival and transition to Budapest.
+    </p>
+
+    <div class="editorial-accordion-list">
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>What happens if my flight arrives late at night or is delayed?</span>
+          <span class="accordion-cross-icon"></span>
+        </button>
+        <div class="accordion-body-collapse">
+          <p>
+            We track all inbound flights live via flight radar. Even if your flight is delayed by several hours or lands at 2:00 AM, your dedicated chauffeur and concierge will be waiting at Terminal 2A or 2B arrivals at zero additional waiting surcharge.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>How does verified housing assistance work before I arrive?</span>
+          <span class="accordion-cross-icon"></span>
+        </button>
+        <div class="accordion-body-collapse">
+          <p>
+            Our team visits properties in person, conducts 4K video walkthroughs, verifies that the landlord legally possesses the deed, and reviews the lease contract so it satisfies Hungarian immigration requirements. We never recommend unvetted listings.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>Will an officer physically escort me to the immigration office (BÁH)?</span>
+          <span class="accordion-cross-icon"></span>
+        </button>
+        <div class="accordion-body-collapse">
+          <p>
+            Yes! With our Academic Elite and Royal Transition packages, an experienced bilingual concierge meets you, checks your dossier (passport, biometric photos, university acceptance letter, lease contract), and stays beside you at the immigration office until your biometric capture is complete.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>Can I pay in Euros, Hungarian Forints, or via bank transfer?</span>
+          <span class="accordion-cross-icon"></span>
+        </button>
+        <div class="accordion-body-collapse">
+          <p>
+            We accept card payments, international bank transfers (Wise / Revolut / SEPA), and cash on arrival in either EUR (€) or Hungarian Forint (HUF). You receive an official invoice receipt for all concierge services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MINIMALIST DEEP SAGE FOOTER & LEGAL
+     ========================================================================== -->
+<footer class="luxury-footer">
+  <div class="footer-top-grid">
+    <div class="footer-col">
+      <div class="brand-crest" style="margin-bottom:1.5rem;">
+        <div class="crest-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="#C5A059" stroke-width="2"/>
+            <path d="M50 14 L53 38 L77 41 L56 55 L63 79 L50 64 L37 79 L44 55 L23 41 L47 38 Z" fill="#C5A059" opacity="0.85"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <span class="brand-name" style="color:var(--cream-canvas);">Budapest Arrival</span>
+          <span class="brand-tag">VIP Student Concierge</span>
+        </div>
+      </div>
+      <p style="font-size:0.92rem; color:rgba(249,246,240,0.75); max-width:340px; line-height:1.7;">
+        The premier arrival and relocation agency for South Asian scholars in Budapest, Hungary. Providing dignified, culturally fluent transition from airport gate to university graduation.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#hero">Arrival Portal</a></li>
+        <li><a href="#onboarding">Four-Step Journey</a></li>
+        <li><a href="#services">Core Services</a></li>
+        <li><a href="#pricing">Concierge Tiers</a></li>
+        <li><a href="#booking">Reserve Slot</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Student Resources</h4>
+      <ul>
+        <li><a href="https://bkk.hu/en/" target="_blank" rel="noopener">BKK Public Transit Pass</a></li>
+        <li><a href="http://oif.gov.hu/index.php?lang=en" target="_blank" rel="noopener">Immigration Office (OIF)</a></li>
+        <li><a href="https://www.otpbank.hu/portal/en/Individuals" target="_blank" rel="noopener">OTP Student Banking</a></li>
+        <li><a href="https://www.yettel.hu/en" target="_blank" rel="noopener">Yettel Hungarian 5G SIM</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Concierge Desk</h4>
+      <ul>
+        <li style="color:rgba(249,246,240,0.85);">📍 Liszt Ferenc International (BUD) T2</li>
+        <li style="color:rgba(249,246,240,0.85);">💬 WhatsApp Concierge: +36 30 123 4567</li>
+        <li style="color:rgba(249,246,240,0.85);">✉️ concierge@budapestarrival.com</li>
+        <li style="color:var(--gold-bright); font-size:0.8rem; margin-top:0.6rem;">● 24/7 Flight Monitoring Active</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar">
+    <div>© 2024 Budapest Arrival Concierge. All rights reserved. Designed for South Asian Students in Hungary.</div>
+    <div>Strict GDPR Data Protection · Transparent Pricing · Certified Relocation Assistance</div>
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     INTERACTIVE JAVASCRIPT & GSAP ENGINE
+     ========================================================================== -->
+<script>
+/**
+ * BUDAPEST ARRIVAL CONCIERGE ENGINE
+ * Zero-Backend Static Deployment with Free Form Submission & WhatsApp Sync
+ */
+(function() {
+  'use strict';
+
+  // CONFIGURATION: Replace with your email to receive form submissions via FormSubmit.co
+  const CONCIERGE_CONFIG = {
+    notificationEmail: 'concierge@budapestarrival.com',
+    whatsAppNumber: '36301234567', // Format without '+' for wa.me link
+    formServiceUrl: 'https://formsubmit.co/ajax/'
+  };
+
+  /* ---------- MOBILE MENU DRAWER ---------- */
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+
+  mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    mobileDrawer.classList.toggle('active');
+    document.body.style.overflow = mobileDrawer.classList.contains('active') ? 'hidden' : '';
+  });
+
+  window.closeDrawer = function() {
+    mobileToggle.classList.remove('active');
+    mobileDrawer.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  /* ---------- SCROLLED HEADER & PROGRESS ---------- */
+  const siteHeader = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ---------- DYNAMIC MULTILINGUAL GREETING ---------- */
+  const greetings = [
+    "Welcome", 
+    "नमस्ते (Namaste)", 
+    "வணக்கம் (Vanakkam)", 
+    "خوش آمدید (Khushamdeed)", 
+    "స్వాగతం (Swagatam)"
+  ];
+  let currentGreetingIndex = 0;
+  const greetingTarget = document.getElementById('greetingTarget');
+
+  setInterval(() => {
+    if (!greetingTarget) return;
+    greetingTarget.style.opacity = 0;
+    greetingTarget.style.transform = 'translateY(-6px)';
+    setTimeout(() => {
+      currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+      greetingTarget.textContent = greetings[currentGreetingIndex];
+      greetingTarget.style.opacity = 1;
+      greetingTarget.style.transform = 'translateY(0)';
+    }, 400);
+  }, 3200);
+
+  /* ---------- GSAP SCROLLTRIGGER PARALLAX & LIQUID PATH ---------- */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Multi-depth Hero Parallax
+    const parallaxLayers = document.querySelectorAll('.scene-parallax-layer');
+    parallaxLayers.forEach(layer => {
+      const depth = parseFloat(layer.getAttribute('data-depth') || 0.1);
+      gsap.to(layer, {
+        y: () => window.innerHeight * depth * 1.8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    });
+
+    // 4-Step Liquid Gold Path Drawing
+    const liquidPath = document.getElementById('liquidPath');
+    if (liquidPath) {
+      gsap.to(liquidPath, {
+        strokeDashoffset: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#onboarding',
+          start: 'top 70%',
+          end: 'bottom 80%',
+          scrub: 1
+        }
+      });
+    }
+
+    // Hero Header Split Reveal
+    gsap.from('.hero-main-title', {
+      duration: 1.2,
+      y: 40,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.2
+    });
+
+    gsap.from('#conciergeMockup', {
+      duration: 1.4,
+      y: 60,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.4
+    });
+  }
+
+  /* ---------- MOUSE PERSPECTIVE PARALLAX TILT ---------- */
+  const mockup = document.getElementById('conciergeMockup');
+  if (mockup && window.innerWidth > 1024) {
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 14;
+      const y = (e.clientY / window.innerHeight - 0.5) * 14;
+      mockup.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+    });
+  }
+
+  /* ---------- GAMIFIED JOURNEY TRACKER ON SCROLL ---------- */
+  const sections = [
+    { id: 'hero', node: 0 },
+    { id: 'onboarding', node: 1 },
+    { id: 'services', node: 2 },
+    { id: 'pricing', node: 3 },
+    { id: 'booking', node: 4 }
+  ];
+  const journeyNodes = document.querySelectorAll('.journey-node');
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 350;
+    sections.forEach((sec, idx) => {
+      const el = document.getElementById(sec.id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          journeyNodes.forEach((node, nIdx) => {
+            node.classList.toggle('active', nIdx === idx);
+            node.classList.toggle('passed', nIdx < idx);
+          });
+        }
+      }
+    });
+  }, { passive: true });
+
+  /* ---------- CURRENCY TOGGLE ---------- */
+  window.switchCurrency = function(curr) {
+    const btnEUR = document.getElementById('btnEUR');
+    const btnHUF = document.getElementById('btnHUF');
+    const prices = document.querySelectorAll('.tier-price');
+
+    if (curr === 'EUR') {
+      btnEUR.classList.add('active');
+      btnHUF.classList.remove('active');
+      prices.forEach(p => p.textContent = p.dataset.eur);
+    } else {
+      btnHUF.classList.add('active');
+      btnEUR.classList.remove('active');
+      prices.forEach(p => p.textContent = p.dataset.huf);
+    }
+  };
+
+  /* ---------- STATS COUNTERS ---------- */
+  const counters = document.querySelectorAll('[data-count]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const targetVal = parseFloat(el.getAttribute('data-count'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let start = 0;
+        const duration = 1600;
+        const stepTime = 20;
+        const stepIncrement = targetVal / (duration / stepTime);
+
+        const timer = setInterval(() => {
+          start += stepIncrement;
+          if (start >= targetVal) {
+            el.textContent = Math.round(targetVal) + suffix;
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.round(start) + suffix;
+          }
+        }, stepTime);
+
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => countObserver.observe(c));
+
+  /* ---------- TESTIMONIALS SLIDER DRAG & ARROWS ---------- */
+  const slider = document.getElementById('testimonialSlider');
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+  let currentSlide = 0;
+  const totalCards = document.querySelectorAll('.testimonial-slide-card').length;
+
+  function updateSlide() {
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
+    const cardsVisible = isMobile ? 1 : (isTablet ? 2 : 3);
+    const maxSlide = Math.max(0, totalCards - cardsVisible);
+    currentSlide = Math.min(Math.max(currentSlide, 0), maxSlide);
+
+    const cardWidthPercent = isMobile ? 100 : (isTablet ? 50 : 33.333);
+    slider.style.transform = `translateX(-${currentSlide * cardWidthPercent}%)`;
+  }
+
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentSlide++;
+      updateSlide();
+    });
+    prevBtn.addEventListener('click', () => {
+      currentSlide--;
+      updateSlide();
+    });
+  }
+  window.addEventListener('resize', updateSlide);
+
+  /* ---------- FAQ ACCORDION ---------- */
+  const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const parent = trigger.parentElement;
+      const isOpen = parent.classList.contains('active');
+
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isOpen) {
+        parent.classList.add('active');
+      }
+    });
+  });
+
+  /* ==========================================================================
+     BOOKING WIZARD ENGINE & ZERO-BACKEND SUBMISSION
+     ========================================================================== */
+  let activeWizardStep = 1;
+  const packageRates = {
+    essential: { name: 'Budapest Essential', price: 180 },
+    elite: { name: 'The Academic Elite', price: 390 },
+    royal: { name: 'The Royal Transition', price: 750 }
+  };
+
+  window.choosePackage = function(pkgKey, price, el) {
+    document.querySelectorAll('.package-choice-card').forEach(c => c.classList.remove('selected'));
+    if (el) el.classList.add('selected');
+    document.getElementById('selectedPackageInput').value = pkgKey;
+    document.getElementById('basePackagePrice').value = price;
+    calculateTotal();
+  };
+
+  window.selectPackageFromPricing = function(pkgKey) {
+    const pkg = packageRates[pkgKey];
+    if (!pkg) return;
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    const cards = document.querySelectorAll('.package-choice-card');
+    const idx = pkgKey === 'essential' ? 0 : (pkgKey === 'elite' ? 1 : 2);
+    choosePackage(pkgKey, pkg.price, cards[idx]);
+    jumpToStep(1);
+  };
+
+  window.calculateTotal = function() {
+    const pkgKey = document.getElementById('selectedPackageInput').value || 'essential';
+    const basePrice = packageRates[pkgKey].price;
+    let total = basePrice;
+
+    if (document.getElementById('addonLuggage')?.checked) total += 25;
+    if (document.getElementById('addonHamper')?.checked) total += 20;
+    if (document.getElementById('addonLinen')?.checked) total += 35;
+
+    const display = document.getElementById('finalPriceDisplay');
+    const nameDisplay = document.getElementById('summaryTierName');
+    if (display) display.textContent = '€' + total;
+    if (nameDisplay) nameDisplay.textContent = packageRates[pkgKey].name;
+
+    return total;
+  };
+
+  window.jumpToStep = function(stepNum) {
+    // Only allow jump if prior steps are completed
+    if (stepNum > activeWizardStep) {
+      if (!validateCurrentStep(activeWizardStep)) return;
+    }
+    document.querySelectorAll('.wizard-step-pane').forEach((p, idx) => {
+      p.classList.toggle('active', idx + 1 === stepNum);
+    });
+    document.querySelectorAll('.wizard-step-node').forEach((node, idx) => {
+      node.classList.toggle('active', idx + 1 === stepNum);
+      node.classList.toggle('completed', idx + 1 < stepNum);
+    });
+    activeWizardStep = stepNum;
+    calculateTotal();
+  };
+
+  function validateCurrentStep(stepNum) {
+    if (stepNum === 2) {
+      const date = document.getElementById('arrivalDate');
+      const time = document.getElementById('arrivalTime');
+      const flight = document.getElementById('flightNumber');
+      const uni = document.getElementById('universitySelect');
+      if (!date.value || !time.value || !flight.value || !uni.value) {
+        alert('Please complete your flight coordinates and university institution.');
+        return false;
+      }
+    } else if (stepNum === 3) {
+      const name = document.getElementById('studentName');
+      const email = document.getElementById('studentEmail');
+      const phone = document.getElementById('studentPhone');
+      if (!name.value || !email.value || !phone.value) {
+        alert('Please enter your full name, email, and WhatsApp phone number.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  window.nextStep = function(current) {
+    if (validateCurrentStep(current)) {
+      jumpToStep(current + 1);
+    }
+  };
+
+  window.prevStep = function(current) {
+    jumpToStep(current - 1);
+  };
+
+  /* ---------- ZERO-BACKEND SUBMIT & RECEIPT DISPATCH ---------- */
+  window.handleBookingSubmit = function(e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBookingBtn');
+    submitBtn.textContent = 'Dispatching Reservation...';
+    submitBtn.disabled = true;
+
+    const studentName = document.getElementById('studentName').value;
+    const studentEmail = document.getElementById('studentEmail').value;
+    const studentPhone = document.getElementById('studentPhone').value;
+    const arrivalDate = document.getElementById('arrivalDate').value;
+    const arrivalTime = document.getElementById('arrivalTime').value;
+    const flightNum = document.getElementById('flightNumber').value;
+    const terminal = document.getElementById('terminalSelect').value;
+    const university = document.getElementById('universitySelect').value;
+    const language = document.getElementById('preferredLanguage').value;
+    const pkgKey = document.getElementById('selectedPackageInput').value;
+    const pkgName = packageRates[pkgKey].name;
+    const totalEuro = calculateTotal();
+    const bookingCode = 'BUD-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+
+    const payload = {
+      _subject: `New Arrival Reservation: ${studentName} (${bookingCode})`,
+      booking_reference: bookingCode,
+      name: studentName,
+      email: studentEmail,
+      phone: studentPhone,
+      language_preference: language,
+      arrival_date: arrivalDate,
+      landing_time: arrivalTime,
+      flight: flightNum,
+      terminal: terminal,
+      university: university,
+      package: pkgName,
+      total_price: '€' + totalEuro
+    };
+
+    // Client-side async fetch to FormSubmit.co free endpoint
+    fetch(CONCIERGE_CONFIG.formServiceUrl + CONCIERGE_CONFIG.notificationEmail, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    }).catch(err => {
+      // Even if network/adblock blocks FormSubmit, user still gets instant receipt & WhatsApp dispatch
+      console.log('Form submission logged client-side.');
+    }).finally(() => {
+      // Show Boarding Pass Receipt
+      document.getElementById('arrivalBookingForm').style.display = 'none';
+      document.querySelector('.wizard-nav-stepper').style.display = 'none';
+      const receipt = document.getElementById('bookingReceipt');
+      receipt.style.display = 'block';
+
+      document.getElementById('receiptCode').textContent = `REF: ${bookingCode}`;
+      document.getElementById('recStudentName').textContent = studentName;
+      document.getElementById('recFlight').textContent = `${flightNum} (${terminal})`;
+      document.getElementById('recDate').textContent = `${arrivalDate} at ${arrivalTime} CET`;
+      document.getElementById('recPackage').textContent = pkgName;
+      document.getElementById('recTotal').textContent = '€' + totalEuro;
+
+      // Generate Pre-Filled WhatsApp Direct Link
+      const waMessage = encodeURIComponent(
+        `Hello Budapest Arrival Concierge!\n\n` +
+        `I have reserved my arrival slot:\n` +
+        `• Booking Ref: ${bookingCode}\n` +
+        `• Name: ${studentName}\n` +
+        `• University: ${university}\n` +
+        `• Flight: ${flightNum} (${terminal})\n` +
+        `• Arrival: ${arrivalDate} at ${arrivalTime} CET\n` +
+        `• Package: ${pkgName} (€${totalEuro})\n` +
+        `• Preferred Language: ${language}\n\n` +
+        `Please confirm my dedicated arrival chauffeur & guide!`
+      );
+      const waBtn = document.getElementById('whatsAppDirectBtn');
+      waBtn.href = `https://wa.me/${CONCIERGE_CONFIG.whatsAppNumber}?text=${waMessage}`;
+    });
+  };
+
+})();
+</script>
+</body>
+</html>
